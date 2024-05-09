@@ -168,9 +168,3 @@ const Divider1 = styled.div`
   background: ${theme.lightColor};
   opacity: 0.5;
 `;
-const Divider2 = styled.div`
-  height: 2px;
-  flex: 1 0 0;
-  background: ${theme.lightColor};
-  opacity: 0.5;
-`;

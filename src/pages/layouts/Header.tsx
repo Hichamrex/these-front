@@ -1,11 +1,25 @@
 import styled from "@emotion/styled";
 import { theme, screenValues } from "../../theme/theme";
 import assets from "../../assets";
-import { ChevronRight, ChevronLeft, NotificationsActiveOutlined } from "@mui/icons-material";
+import {
+  ChevronRight,
+  ChevronLeft,
+  NotificationsActiveOutlined,
+} from "@mui/icons-material";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { forwardRef, useState } from "react";
-import { Group, Avatar, Text, Menu, UnstyledButton, Paper, Title, Badge } from "@mantine/core";
+import {
+  Group,
+  Avatar,
+  Text,
+  Menu,
+  UnstyledButton,
+  Paper,
+  Title,
+  Badge,
+  Button,
+} from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 // import ChangePasswordWebAdapter from "../../feat-changePassword/ChangePasswordWebAdapter";
 import { format, parseISO } from "date-fns";
@@ -41,8 +55,10 @@ const UserButton = forwardRef<HTMLButtonElement, UserButtonProps>(
           sx={{ fontSize: 30 }}
         />
         <div>
-          <h4 style={{margin:0}}>{name}</h4>
-          <Text className="userStatus" size="sm">{status}</Text>
+          <h4 style={{ margin: 0 }}>{name}</h4>
+          <Text className="userStatus" size="sm">
+            {status}
+          </Text>
         </div>
       </div>
     </UnstyledButton>
@@ -52,11 +68,13 @@ interface headerProps {
   isHeaderAuth?: boolean;
   openSideBar?: () => void;
   isSBOpen?: boolean;
+  isAccueil?: boolean;
 }
 export const Header = ({
   isHeaderAuth,
   openSideBar,
   isSBOpen,
+  isAccueil,
 }: headerProps) => {
   const navigate = useNavigate();
   const [openProfile, setOpenProfile] = useState(false);
@@ -65,115 +83,109 @@ export const Header = ({
 
   const header = (
     <>
-    <div className="content">
-      <div className="imgDiv">
-        {!isHeaderAuth &&
-          (isSBOpen ? (
-            <ChevronLeft
-              onClick={openSideBar}
-              style={{
-                cursor: "pointer",
-                color: theme.whiteColor,
-                width: "20%",
-              }}
-            />
-          ) : (
-            <ChevronRight
-              onClick={openSideBar}
-              style={{
-                cursor: "pointer",
-                color: theme.whiteColor,
-                width: "20%",
-              }}
-            />
-          ))}
-        <img
-          src={assets.LOGO_APP}
-          style={{ width: "80%", height: "100%", objectFit: "contain" }}
-        ></img>
-      </div>
-      {isHeaderAuth && (
-        <h4
+      <div className="content">
+        <div className="imgDiv">
+          {!isHeaderAuth &&
+            (isSBOpen ? (
+              <ChevronLeft
+                onClick={openSideBar}
+                style={{
+                  cursor: "pointer",
+                  color: theme.whiteColor,
+                  width: "20%",
+                }}
+              />
+            ) : (
+              <ChevronRight
+                onClick={openSideBar}
+                style={{
+                  cursor: "pointer",
+                  color: theme.whiteColor,
+                  width: "20%",
+                }}
+              />
+            ))}
+          <img
+            src={assets.LOGO_APP}
+            style={{ width: "80%", height: "100%", objectFit: "contain" }}
+          ></img>
+        </div>
+        {isHeaderAuth && (
+          <h4
+            style={{
+              fontFamily: theme.mainFont,
+              color: theme.whiteColor,
+              width: "50%",
+            }}
+          >
+            Le Moteur de recherche des theses FSAC
+          </h4>
+        )}
+        <div
           style={{
-            fontFamily: theme.mainFont,
-            color: theme.whiteColor,
-            width: "50%",
+            width: "40%",
+            marginRight: "10px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "end",
           }}
         >
-          Moteur de recherche FSAC
-        </h4>
-      )}
-      <div
-        style={{
-          width: "40%",
-          marginRight: "10px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "end",
-        }}
-      >
-        {!isHeaderAuth && (
-          <Profile>
-            <Menu withArrow position="bottom-end">
-                            
-              {/* {
-                notificationsMSP?.data?.length > 0 && mappRole(sessionStorage.getItem("roles") || "") === "municipalite_admin"  ?
-              <Menu.Dropdown >
-              {notificationsMSP?.data?.map((notification: any, index: number) => {
-                return (
-                  <Menu.Item key={index}>
-                  <NotificationContent 
-                    notification={{
-                      title: `${notification?.sujet}`,
-                      content: `${notification?.body}`,
-                      date: `${format(parseISO(notification?.notificationDate), "MM/dd/yyyy hh:mm:ss")}`
-                    }} />
-                  </Menu.Item>
-                );
-              })
-              }
-              </Menu.Dropdown>
-              :
-              <Menu.Dropdown >
-                  <Menu.Item>
-                  <NotificationContent 
-                    notification={{
-                      title: ``,
-                      content: `Aucune notification`,
-                      date: ``
-                    }} />
-                  </Menu.Item>
-              </Menu.Dropdown>
-            } */}
-            </Menu>
+          {!isHeaderAuth && (
+            <Profile>
+              {/* <Menu withArrow position="bottom-end"></Menu> */}
 
-            <Menu offset={0}>
-              <Menu.Target>
-                <UserButton name={`Ichraq AMINE`} status={`Agent de recherche`} />
-              </Menu.Target>
-              <Menu.Dropdown>
-                <Menu.Item
-                  onClick={() => {
-                    setOpenProfile(true);
-                  }}
-                >Profil</Menu.Item>
-                <Menu.Divider />
-                <Menu.Item 
-                  onClick={() => {
-                  setOpenChangePassword(true);
-                  }}
-                >Changer mot de passe</Menu.Item>
-                <Menu.Divider />
-                <Menu.Item onClick={() => {
-                  navigate("/");
-                }}>Déconnexion</Menu.Item>
-              </Menu.Dropdown>
-            </Menu>
-          </Profile>
+              <Menu offset={0}>
+                <Menu.Target>
+                  <UserButton
+                    name={`Ichraq AMINE`}
+                    status={`Agent de recherche`}
+                  />
+                </Menu.Target>
+                <Menu.Dropdown>
+                  <Menu.Item
+                    onClick={() => {
+                      setOpenProfile(true);
+                    }}
+                  >
+                    Profil
+                  </Menu.Item>
+                  <Menu.Divider />
+                  <Menu.Item
+                    onClick={() => {
+                      setOpenChangePassword(true);
+                    }}
+                  >
+                    Changer mot de passe
+                  </Menu.Item>
+                  <Menu.Divider />
+                  <Menu.Item
+                    onClick={() => {
+                      navigate("/");
+                    }}
+                  >
+                    Déconnexion
+                  </Menu.Item>
+                </Menu.Dropdown>
+              </Menu>
+            </Profile>
+          )}
+        </div>
+
+        {isAccueil && (
+          <div
+            style={{
+              width: "40%",
+              marginRight: "10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "end",
+            }}
+          >
+            {<Button onClick={() => navigate("/login")}>Se connecter</Button>}
+          </div>
         )}
       </div>
-    </div>
-    {/* <ChangePasswordWebAdapter 
+      {/* <ChangePasswordWebAdapter 
       opened={openChangePassword}
       setOpened={setOpenChangePassword}
     /> */}
@@ -234,8 +246,8 @@ const Root = styled.section`
         display: none;
       }
     }
-    .userStatus{
-      display:none;
+    .userStatus {
+      display: none;
     }
     .imgDiv {
       width: 40%;
