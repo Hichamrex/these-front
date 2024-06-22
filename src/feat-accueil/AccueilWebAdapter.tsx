@@ -46,23 +46,47 @@ export const AccueilWebAdapter = () => {
     <>
     
       <Wrapper>
-      <Box
+      {/* <Box
       sx={{
-        border: "2px solid black",
-        marginTop: "-50px",
-        marginLeft: "-115px",
+        border: "2px solid #0A4A7A",
+        marginTop: "-52px",
+        marginLeft: "-110px",
+        height: "85vh",
+        padding: "10px",
+        width: "500px"
         // marginRight: "20px"
       }}
     >
-      <Text>Hello</Text>
-      <Text>Check</Text>
-    </Box>
+      <Box
+        
+      >
+        <Text
+          sx={{
+            width: "100%",
+            fontWeight: 800
+          }}
+        >
+          Les theses a venir
+        </Text>
+        <Text
+          
+        >Tjkwkew kwekwe kjewkj wkjewkj ewkjewkjewkjewkjwekjew</Text>
+        <Text>10/03/2000</Text>
+      </Box>
+      <hr />
+    </Box > */}
+    <Box
+      sx={{
+        marginLeft: "-30px"
+      }}
+    >
         <Box 
          sx={{
-          marginLeft: "300px"
+          marginLeft: "200px",
+          marginRight: "160px"
          }}
         >
-      <Title align="center"
+        <Title align="center"
           sx={{color: "#0c2135",
             fontWeight: 100
           }}
@@ -79,9 +103,7 @@ export const AccueilWebAdapter = () => {
               <IconSchool />
             }
           >
-            {isThese && <span >-</span>}
-            Les theses
-            {isThese && <span>-</span>}
+            -Les theses-
           </Button>  ||
           <Button variant="subtle" size="lg" 
             sx={{
@@ -92,9 +114,7 @@ export const AccueilWebAdapter = () => {
               <IconUsers />
             }
           >
-            {isPersonne && <span>-</span>}
-            Les Personnes
-            {isPersonne && <span>-</span>}
+            -Les Personnes-
           </Button>
         </Group>
 
@@ -232,6 +252,7 @@ export const AccueilWebAdapter = () => {
           </Grid.Col>
           </Boxes>
         </Grid>
+        </Box>
         </Box>
     </Wrapper>
     </>

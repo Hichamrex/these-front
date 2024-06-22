@@ -516,8 +516,8 @@ const UpdateForm = ({ opened, setOpened, these_id }: InvoiceOpenProps) => {
               </Grid.Col>
               <Radio.Group
                 name="type"
-                label="Choississ"
-                description="This is anonymous"
+                label="choisissez l'une de ces options"
+                // description="This is anonymous"
                 withAsterisk
                 value={theseFormik?.values?.type}
                 onChange={(value: any) => {

@@ -158,7 +158,7 @@ export const Header = ({
                   <Menu.Divider />
                   <Menu.Item
                     onClick={() => {
-                      navigate("/login");
+                      navigate("/");
                     }}
                   >
                     Déconnexion
@@ -210,7 +210,8 @@ const Root = styled.section`
     align-items: center;
     justify-content: space-between;
     padding: 0px;
-    background-color: ${theme.mainColor};
+    // background-color: ${theme.mainColor};
+    background-color: #888;
     height: 60px;
   }
   .imgDiv {

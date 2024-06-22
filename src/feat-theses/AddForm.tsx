@@ -477,8 +477,8 @@ const AddForm = ({ opened, setOpened }: InvoiceOpenProps) => {
               </Grid.Col>
               <Radio.Group
                 name="type"
-                label="Choississ"
-                description="This is anonymous"
+                label="choisissez l'une de ces options"
+                // description="This is anonymous"
                 withAsterisk
                 value={theseFormik?.values?.type}
                 onChange={(value) => {
@@ -496,7 +496,7 @@ const AddForm = ({ opened, setOpened }: InvoiceOpenProps) => {
           {/* ------------------------------------------------------------------- */}
 
           {/* Adjusting submit button and clear */}
-          <Box sx={{ marginLeft: "28rem", marginTop: "2rem" }}>
+          <Box sx={{ marginLeft: "20rem", marginTop: "2rem" }}>
             <Button
               variant="default"
               color="red"
