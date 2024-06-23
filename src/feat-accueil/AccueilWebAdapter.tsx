@@ -19,7 +19,7 @@ import * as yup from "yup";
 import { theme } from "../theme/theme";
 import "./styles.css";
 import styled from "@emotion/styled";
-import { IconArrowRight, IconListSearch, IconSchool, IconSearch, IconUsers } from "@tabler/icons-react";
+import { IconArrowRight, IconListSearch, IconSchool, IconSearch, IconUser, IconUserFilled, IconUsers } from "@tabler/icons-react";
 import { useGetTheseCountsQuery, useGetUpcomingTheseQuery } from "../redux/features/Theses/sliceThese";
 
 export const AccueilWebAdapter = () => {
@@ -82,9 +82,10 @@ export const AccueilWebAdapter = () => {
     >
         <Box 
          sx={{
-          marginLeft: "200px",
-          marginRight: "160px"
+          marginLeft: "250px",
+          // marginRight: "160px"
          }}
+         
         >
         <Title align="center"
           sx={{color: "#0c2135",
@@ -136,7 +137,8 @@ export const AccueilWebAdapter = () => {
               backgroundColor: "#0A4A7A",
               color: "#ffffff",
               borderRadius: "15px",
-              width: "500px"
+              width: "500px",
+              marginBottom: "25px"
             }}
             leftIcon={
               <IconListSearch />
@@ -179,13 +181,33 @@ export const AccueilWebAdapter = () => {
         >
           Rechercher
         </Button> */}
-        <Grid mt="xl" justify="center">
+        <Grid mt="xl" justify="center" 
+        
+        >
         <Boxes>
           <Grid.Col span={4} sx={{
-            border: "1px solid #eee",
+            border: "2px solid #0A4A7A",
             borderRadius: "12px",
-            marginRight: "12px"
-          }}>
+            marginRight: "12px",
+            // position: "ab"
+          }}
+          
+          >
+            <Box sx={{
+              position: "relative",
+              top: "-37px",
+              left: "35%",
+            }}>
+            <IconSchool
+            color="#0A4A7A"
+            width={"55px"}
+            height={"55px"}
+              // size={""}
+            ></IconSchool>
+            </Box>
+            <Box 
+              sx={{marginTop: "-40px"}}
+            >
               <Text align="center" size="xl" weight={700}
               >
                 {counts?.data?.soutenue_count || 0}
@@ -204,12 +226,28 @@ export const AccueilWebAdapter = () => {
               >
                 Explorer
               </Button>
+              </Box>
           </Grid.Col>
           <Grid.Col span={4} sx={{
-            border: "1px solid #eee",
+            border: "2px solid #0A4A7A",
             borderRadius: "12px",
             marginRight: "12px",
           }}>
+            <Box sx={{
+              position: "relative",
+              top: "-39px",
+              left: "33%",
+            }}>
+            <IconUserFilled
+            color="#0A4A7A"
+            width={"55px"}
+            height={"55px"}
+              // size={""}
+            />
+            </Box>
+            <Box 
+              sx={{marginTop: "-55px"}}
+            >
               <Text align="center" size="xl" weight={700}>
               {counts?.data?.unique_users_count || 0}
               </Text>
@@ -227,11 +265,27 @@ export const AccueilWebAdapter = () => {
               >
                 Explorer
               </Button>
+              </Box>
           </Grid.Col>
           <Grid.Col span={4} sx={{
-            border: "1px solid #eee",
+            border: "2px solid #0A4A7A",
             borderRadius: "12px",
           }}>
+            <Box sx={{
+              position: "relative",
+              top: "-37px",
+              left: "35%",
+            }}>
+            <IconSchool
+            color="#0A4A7A"
+            width={"55px"}
+            height={"55px"}
+              // size={""}
+            ></IconSchool>
+            </Box>
+            <Box 
+              sx={{marginTop: "-40px"}}
+            >
               <Text align="center" size="xl" weight={700}>
               {counts?.data?.preparation_count || 0}
               </Text>
@@ -249,6 +303,7 @@ export const AccueilWebAdapter = () => {
               >
                 Explorer
               </Button>
+              </Box>
           </Grid.Col>
           </Boxes>
         </Grid>
@@ -263,7 +318,8 @@ const Wrapper = styled.div`
   width: 80vw;
   margin: 100px auto;
   display: flex;
-  // border: 2px solid black;
+  // border: 2px solid "#0A4A7A";
+  // border-radius: "15px";
   padding: 10px;
 `;
 

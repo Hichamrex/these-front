@@ -3,7 +3,7 @@ import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import { Layout } from "./layouts/Layout";
 import { theme } from "../theme/theme";
 import { Accordion, Button } from "@mantine/core";
-import { IconPlus } from "@tabler/icons-react";
+import { IconBuilding, IconBuildingSkyscraper, IconPlus } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import AccordionItem from "../components/AccordionItem";
 import PaginationTable from "../components/PaginationTable";
@@ -49,7 +49,7 @@ const Departements = () => {
       isExpand: false,
     },
     {
-      icon: <FolderOutlinedIcon />,
+      icon: <IconBuildingSkyscraper />,
       title: "Departements",
       action: (
         <Button

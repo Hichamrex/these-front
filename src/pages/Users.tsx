@@ -3,7 +3,7 @@ import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import { Layout } from "./layouts/Layout";
 import { theme } from "../theme/theme";
 import { Accordion, Button } from "@mantine/core";
-import { IconPlus } from "@tabler/icons-react";
+import { IconPlus, IconUsers } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import AccordionItem from "../components/AccordionItem";
 import PaginationTable from "../components/PaginationTable";
@@ -75,7 +75,7 @@ const Users = () => {
       isExpand: false,
     },
     {
-      icon: <FolderOutlinedIcon />,
+      icon: <IconUsers />,
       title: "Users",
       action: (
         <Button

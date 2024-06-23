@@ -130,8 +130,8 @@ const TheseDetailsWebAdapter = () => {
                <Text><strong>Rapporteur / Rapportrice :</strong> {users?.data?.filter((u: any) => u?.role === "Professeur" && u?.id === these?.data?.rapporteur_id).map((u: any) => 
                   `${u.first_name} ${u.last_name}`,
                   )}</Text>
-               {/* <hr />
-               <Text><strong>Discipline :</strong> Linguistique</Text> */}
+               <hr />
+               <Text><strong>Discipline :</strong> {these?.data?.discipline || ""}</Text>
                <hr />
                <Text><strong>Date Soutenance :</strong> le {format(formatDateFromGet(these?.data?.date_soutenance), "dd/MM/yyyy") || ""}</Text>
                <hr />

@@ -3,7 +3,7 @@ import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import { Layout } from "./layouts/Layout";
 import { theme } from "../theme/theme";
 import { Accordion, Button } from "@mantine/core";
-import { IconPlus } from "@tabler/icons-react";
+import { IconMicroscope, IconPlus } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import AccordionItem from "../components/AccordionItem";
 import PaginationTable from "../components/PaginationTable";
@@ -37,7 +37,7 @@ const Laboratoires = () => {
       isExpand: false,
     },
     {
-      icon: <FolderOutlinedIcon />,
+      icon: <IconMicroscope />,
       title: "Laboratoires",
       action: (
         <Button
